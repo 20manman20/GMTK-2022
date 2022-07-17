@@ -1,2 +1,1 @@
-draw_text(10,10,bol_floor)
-draw_text(10,20,spd_z)
+draw_text(10,10,player_mode)

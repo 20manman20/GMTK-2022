@@ -1,7 +1,31 @@
 var input_dir, input_bol
 
-input			= [keyboard_check(ord("D")) - keyboard_check(ord("A")),
-				keyboard_check(ord("S")) - keyboard_check(ord("W"))]
+switch (player_mode) {
+    case 0:
+		key_left		= keyboard_check(ord("A"))
+		key_right		= keyboard_check(ord("D"))
+		key_down		= keyboard_check(ord("S"))
+		key_up			= keyboard_check(ord("W"))
+
+		key_jump		= 0
+		key_jump_r		= 0
+		key_stomp		= 0
+
+        break;
+	case 1:
+		key_left		= keyboard_check(ord("A"))
+		key_right		= keyboard_check(ord("D"))
+		key_down		= 0
+		key_up			= 0
+
+		key_jump		= keyboard_check_pressed(ord("W"))
+		key_jump_r		= keyboard_check_released(ord("W"))
+		key_stomp		= keyboard_check(ord("S"))
+        break;
+}
+
+input			= [key_right-key_left,
+				key_down-key_up]
 
 
 input_dir		= point_direction(0,0,input[hh],input[vv])
@@ -11,15 +35,17 @@ input_bol		= point_distance(0,0,input[hh],input[vv])
 var _mag		= interpol(DIS_R_CENTER,56,180,1,1.5)
 
 spd				= [lengthdir_x(input_bol*spd_max*_mag,input_dir),
-					lengthdir_y(input_bol*spd_max,input_dir)]
+					lengthdir_y(input_bol*spd_max,input_dir)*2]
 
 bol_floor		= place_meeting_3d(x,y,z+1,o_slope) || z >= 0
 
-if DIS_R_CENTER <= 102 && spd[vv] < 0 {
+
+
+if DIS_R_CENTER <= limit_sup[player_mode] && spd[vv] < 0 {
 	spd[vv]		= 0
 }
 
-if DIS_R_CENTER >= 270 && spd[vv] > 0 {
+if DIS_R_CENTER >= limit_inf[player_mode] && spd[vv] > 0 {
 	spd[vv]		= 0
 }
 
@@ -67,12 +93,12 @@ repeat (abs(spd_z*2)) {
 
 if !bol_floor {
 	spd_z = acc(spd_z,8,grav)
-} else if keyboard_check_pressed(vk_space)  {
+} else if key_jump  {
 	spd_z	= -10
 	z--
 }
 
-if spd_z < 0 && keyboard_check_released(vk_space) {
+if spd_z < 0 && key_jump_r {
 	spd_z	*= .3
 }
 
@@ -108,3 +134,18 @@ if input[0] == 0 && input[1] == 0 {
 	sprite_index	= spr_walk[clamp(round(input_dir/90),0,3)]
 }
 
+if dice_time < 60*10 {
+	dice_time++
+} else {
+	/*
+	instance_destroy()
+	var _dir	= point_direction(x,y,CENTER_X,CENTER_Y)
+	instance_create_depth(x,y,depth,o_throw, {
+		spd	: [lengthdir_x(15,_dir),lengthdir_y(15,_dir)]
+	})
+	*/
+}
+
+if place_meeting(x,y,par_atk) {
+	instance_destroy()
+}

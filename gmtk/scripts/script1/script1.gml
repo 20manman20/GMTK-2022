@@ -25,8 +25,8 @@ function depth_set_3d(){
 
 function draw_stack(s_index,_x,_y) {
 	for ( var i = 0; i<sprite_get_number(sprite_index); i++ ){
-		var _ldx = lengthdir_x( i*dcos(angle_z)*1/dsin(angle_z), CAMERA_UP)
-		var _ldy = lengthdir_y( i*dcos(angle_z)*1/dsin(angle_z), CAMERA_UP)
+		var _ldx = lengthdir_x( 2*i*dcos(angle_z)*1/dsin(angle_z), CAMERA_UP)
+		var _ldy = lengthdir_y( 2*i*dcos(angle_z)*1/dsin(angle_z), CAMERA_UP)
 		
 		draw_sprite(s_index, i,_x+_ldx, _y+_ldy)
 	}

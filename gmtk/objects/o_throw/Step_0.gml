@@ -16,6 +16,7 @@ if spd_z > 0 && z >= 0 {
 if shake == 0 && point_distance(x,y,CENTER_X,CENTER_Y) < 8 {
 	shake = 15
 	o_boss.hp_ -=25
+	o_boss.sprite_index	= s_boss_confuse
 }
 
 switch (state) {
@@ -27,18 +28,13 @@ switch (state) {
 			o_camera.angle = cam_angle-179
 
 			sprite_index= s_p_choose
-			image_index	= irandom_range(0,7)
+			alarm[1]	= 60*3
 			state	= dc_st.rand
 		}
         break;
     case dc_st.rand:
         sprite_index	= s_p_choose
-		image_speed		= lerp(image_speed,0,.02)
-		if image_speed <= .05 {
-			image_index++
-			state	= dc_st.gold
-			alarm[0]	= 60*1.5
-		}
+		image_speed		= 1
         break;
 	case dc_st.gold:
 		image_speed		= 0

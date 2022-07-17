@@ -1,6 +1,7 @@
-globalvar cam_angle;
+globalvar cam_angle, limit_inf, limit_sup;
 
-radius		= 200
+
+radius		= (756-90*2.5)/2 - 4
 angle		= 270
 
 spd				= [0,0]
@@ -8,7 +9,7 @@ vec_spd			= [0,0]
 spd_final		= [0,0]
 vec_spd_final	= [0,0]
 
-spd_max		= 4
+spd_max		= 2
 
 x	= CENTER_X+lengthdir_x(radius,angle)
 y	= CENTER_Y+lengthdir_y(radius,angle)
@@ -35,3 +36,15 @@ solid_touch	= noone
 enum s_st {
 	idle, walk, jump
 }
+
+dice_time	= 0
+
+instance_create_depth(x,y,depth-10,o_fx, {
+	sprite_index : s_fx_01,
+	z : -32,
+	image_xscale : .5,
+	image_yscale : .5
+})
+
+limit_inf	= [(756)/2,(756-90*2)/2]
+limit_sup	= [(756-90*5)/2,(756-90*3)/2]

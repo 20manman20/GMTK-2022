@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "_00008",
-    "path": "sprites/_00008/_00008.yy",
+    "name": "s_battleground",
+    "path": "sprites/s_battleground/s_battleground.yy",
   },
   "solid": false,
   "visible": true,
@@ -21,7 +21,9 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [],
+  "eventList": [
+    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+  ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
