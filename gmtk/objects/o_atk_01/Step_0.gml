@@ -1,4 +1,8 @@
-angle	= (angle+.6+360) % 360
+if BOL_PLAYER {
+	var _dis	= point_distance(o_player.x,o_player.y,CENTER_X,CENTER_Y)
+	spd	= interpol(_dis,limit_inf[0],limit_sup[1],.67,.82)
+}
+angle	= (angle+spd+360) % 360
 
 x	= CENTER_X + lengthdir_x(265.5,angle)
 y	= CENTER_Y + lengthdir_y(265.5,angle)

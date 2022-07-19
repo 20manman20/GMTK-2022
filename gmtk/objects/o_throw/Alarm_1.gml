@@ -7,5 +7,5 @@ instance_create_depth(x,y,depth-10,o_fx, {
 })
 
 
-image_index	= irandom_range(0,image_number-1)
+image_index	= dice_choose
 alarm[0]	= 60*1.5

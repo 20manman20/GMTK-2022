@@ -1,14 +1,14 @@
 {
   "spriteId": {
-    "name": "s_atk_00",
-    "path": "sprites/s_atk_00/s_atk_00.yy",
+    "name": "s_mask_32",
+    "path": "sprites/s_mask_32/s_mask_32.yy",
   },
   "solid": false,
   "visible": true,
   "managed": true,
   "spriteMaskId": {
-    "name": "s_32_mask",
-    "path": "sprites/s_32_mask/s_32_mask.yy",
+    "name": "s_mask_16",
+    "path": "sprites/s_mask_16/s_mask_16.yy",
   },
   "persistent": false,
   "parentObjectId": {
@@ -31,9 +31,10 @@
     {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":2,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [
-    {"varType":0,"value":"0","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"z","tags":[],"resourceType":"GMObjectProperty",},
+    {"varType":0,"value":"-96","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"z","tags":[],"resourceType":"GMObjectProperty",},
   ],
   "overriddenProperties": [],
   "parent": {

@@ -6,4 +6,7 @@ enum bs_st	{
 	idle
 }
 
+alarm[0]	= 160
+
 boss_state	= bs_st.entry
+image_scale	= [1,1]

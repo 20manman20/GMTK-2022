@@ -13,22 +13,25 @@ if spd_z > 0 && z >= 0 {
 	spd[vv]	= 0
 }
 
-if shake == 0 && point_distance(x,y,CENTER_X,CENTER_Y) < 8 {
+if shake < 0.1 && point_distance(x,y,CENTER_X,CENTER_Y) < 16 {
 	shake = 15
-	o_boss.hp_ -=25
-	o_boss.sprite_index	= s_boss_confuse
+	if instance_exists(o_boss) {
+		o_boss.sprite_index	= s_boss_confuse
+	}
+	
 }
 
 switch (state) {
     case dc_st.fly:
 		sprite_index	= s_p_throw
-		
 		if image_index >= 16 {
 			o_camera.cam_state = cm_st.spin
-			o_camera.angle = cam_angle-179
+			o_camera.angle		= cam_angle
+			o_camera.angle_xr	= 0
 
 			sprite_index= s_p_choose
 			alarm[1]	= 60*3
+			dice_choose	= choose(player_mode+2,player_mode+2,player_mode+2,player_mode+2,0,1,4,5,6,7)
 			state	= dc_st.rand
 		}
         break;

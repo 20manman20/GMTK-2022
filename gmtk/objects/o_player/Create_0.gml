@@ -1,9 +1,5 @@
 globalvar cam_angle, limit_inf, limit_sup;
 
-
-radius		= (756-90*2.5)/2 - 4
-angle		= 270
-
 spd				= [0,0]
 vec_spd			= [0,0]
 spd_final		= [0,0]
@@ -11,10 +7,12 @@ vec_spd_final	= [0,0]
 
 spd_max		= 2
 
-x	= CENTER_X+lengthdir_x(radius,angle)
-y	= CENTER_Y+lengthdir_y(radius,angle)
+invincible	= false
+
+
 
 spd			= [0,0]
+spd_push	= [0,0]
 spd_final	= [0,0]
 
 spr_walk[0]	= s_p_right
@@ -22,9 +20,7 @@ spr_walk[1]	= s_p_up
 spr_walk[2]	= s_p_left
 spr_walk[3]	= s_p_down
 
-grav		= .5
-
-cam_angle	= 0
+grav		= 1.5
 
 
 sh_texel_handle	= shader_get_uniform(sh_outline, "in_texel")
@@ -37,7 +33,8 @@ enum s_st {
 	idle, walk, jump
 }
 
-dice_time	= 0
+dice_time_spd	= 1
+dice_time		= 0
 
 instance_create_depth(x,y,depth-10,o_fx, {
 	sprite_index : s_fx_01,

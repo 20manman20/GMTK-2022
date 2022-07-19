@@ -11,3 +11,5 @@ enum dc_st {
 	gold
 }
 state	= dc_st.fly
+
+dice_choose	= 0

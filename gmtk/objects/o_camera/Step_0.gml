@@ -5,32 +5,32 @@ depth	= -1000
 
 
 
-angle_z		= 30
+angle_z		= lerp(angle_z,interpol(player_mode,0,1,45,25),.2)
 cam_angle_z	= 1/dsin(angle_z)
 
 shake	= lerp(shake,0,.15)
 
 
+
 switch (cam_state) {
     case cm_st.game:
-		if instance_exists(o_player) angle	= point_direction(room_width/2,room_height/2,o_player.x,o_player.y)
+		if BOL_PLAYER {
+			angle	= point_direction(o_player.x,o_player.y,room_width/2,room_height/2) 
 
-		var angle_prev = cam_angle
-		var angle_next = -angle-90
-		var angle_diff = angle_difference(angle_prev,angle_next)
+			var angle_prev = (cam_angle + 360) % 360
+			var angle_next = -angle+90
+			var angle_diff = angle_difference(angle_prev,angle_next)
 
-		angle_next = angle_prev-angle_diff
-		cam_angle	= (lerp(cam_angle,angle_next,.2)+360) % 360
+			angle_next = angle_prev-angle_diff
+			cam_angle	= (lerp(cam_angle,angle_next,.2)+360) % 360
+		}
 	
         break;
-    case cm_st.spin:
-
-		var angle_prev = cam_angle
-		var angle_next = angle
-		var angle_diff = angle_difference(angle_prev,angle_next)
-
-		angle_next = angle_prev-angle_diff
-		var _dif	= interpol(cam_angle-angle,0,180,1,180-1)
-		cam_angle	= cam_angle-dsin(_dif)*6
-        break;
+   case cm_st.spin:
+		angle_xr	=	clamp(angle_xr+2,0,180)
+		cam_angle	= (angle+90-dcos(angle_xr)*90 + 360) % 360
+		if cam_angle == (angle+180+360)%360 {
+			cam_state	= 0
+		}
+	    break;
 }
