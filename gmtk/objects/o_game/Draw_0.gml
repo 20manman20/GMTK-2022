@@ -1,4 +1,4 @@
-if BOL_PLAYER {
+/*if BOL_PLAYER {
 	for (var i = 0; i < 40; ++i) {
 		if o_player.dice_time < 60*9 {
 			var _ind	= 60*10/40*i > o_player.dice_time

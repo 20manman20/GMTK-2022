@@ -4,13 +4,10 @@ camera_set_view_size(view_camera[0],cam_width,cam_height*cam_angle_z)
 depth	= -1000
 
 
-
-angle_z		= lerp(angle_z,interpol(player_mode,0,1,45,25),.2)
+//angle_z		= lerp(angle_z,interpol(player_mode,0,1,45,25),.2)
 cam_angle_z	= 1/dsin(angle_z)
 
 shake	= lerp(shake,0,.15)
-
-
 
 switch (cam_state) {
     case cm_st.game:

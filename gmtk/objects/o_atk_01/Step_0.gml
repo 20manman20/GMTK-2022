@@ -1,6 +1,6 @@
 if BOL_PLAYER {
 	var _dis	= point_distance(o_player.x,o_player.y,CENTER_X,CENTER_Y)
-	spd	= interpol(_dis,limit_inf[0],limit_sup[1],.67,.82)
+	spd	= interpol(_dis,max_radio[0],min_radio[1],.67,.82)
 }
 angle	= (angle+spd+360) % 360
 

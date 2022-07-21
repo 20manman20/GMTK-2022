@@ -3,7 +3,7 @@
     "name": "s_atk_02_signal",
     "path": "sprites/s_atk_02_signal/s_atk_02_signal.yy",
   },
-  "solid": true,
+  "solid": false,
   "visible": true,
   "managed": true,
   "spriteMaskId": null,

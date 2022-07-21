@@ -6,6 +6,9 @@ var t_height	= texture_get_texel_height(texture)
 
 shader_set_uniform_f(sh_texel_handle,t_width,t_height)
 draw_sprite(s_p_shadow,0,x,y)
-draw_sprite_billboard(sprite_index,image_index,x,y)
+
+if interval_is_off(alarm[1], 4) {
+	draw_sprite_billboard(sprite_index,bol_life,x,y)
+}
 
 shader_reset()

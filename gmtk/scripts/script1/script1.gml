@@ -26,10 +26,10 @@ function depth_set_3d(){
 
 function draw_stack(s_index,_x,_y) {
 	for ( var i = 0; i<sprite_get_number(sprite_index); i++ ){
-		var _ldx = lengthdir_x( i*dcos(angle_z)*1/dsin(angle_z), CAMERA_UP)
-		var _ldy = lengthdir_y( i*dcos(angle_z)*1/dsin(angle_z), CAMERA_UP)
+		var _ldx = lengthdir_x( 4*i*dcos(angle_z)*1/dsin(angle_z), CAMERA_UP)
+		var _ldy = lengthdir_y( 4*i*dcos(angle_z)*1/dsin(angle_z), CAMERA_UP)
 		
-		draw_sprite(s_index, i,_x+_ldx, _y+_ldy)
+		draw_sprite_ext(s_index, i,_x+_ldx, _y+_ldy,1,1,image_angle,c_white,1)
 	}
 }
 
@@ -68,7 +68,7 @@ function place_meeting_3d(_x,_y,_z,_obj) {
 
 	if target_i > 0	{
 		for (var i = 0; i < target_i; ++i) {
-			if rectangle_in_rectangle(0,target_ds[| i].z,1,target_ds[| i].z-32,
+			if rectangle_in_rectangle(0,target_ds[| i].z,1,target_ds[| i].z-target_ds[| i].z_size,
 				0, _z-1,1,_z-32) {
 				xymeeting	= target_ds[| i]
 				break

@@ -1,0 +1,1 @@
+draw_sprite(s_atk_02_arrow,point_direction(0,0,spd_hdir,spd_vdir)/90,100,100)

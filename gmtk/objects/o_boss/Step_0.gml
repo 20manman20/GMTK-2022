@@ -2,7 +2,7 @@ switch (boss_state) {
     case bs_st.entry:
 		if image_index >= image_number-2 {
 			boss_state		= bs_st.idle
-			sprite_index	= s_boss_idle_00
+			//sprite_index	= s_boss_idle_00
 			game_state		= 3
 			image_index		= 0
 		}
@@ -11,7 +11,7 @@ switch (boss_state) {
     case bs_st.idle:
 		var _ran	= irandom(96)
 		if _ran == 64 {
-			sprite_index	= choose(s_boss_confuse,s_boss_hit,s_boss_idle_00)
+			//sprite_index	= choose(s_boss_confuse,s_boss_hit,s_boss_idle_00)
 		}
         break;
 }

@@ -1,18 +1,18 @@
 
-if DIS_R_CENTER <= limit_sup[0] {
+if DIS_R_CENTER <= min_radio[0] {
 	var _dir	= point_direction(x,y,room_width/2,room_height/2)-180
 	x	= CENTER_X+lengthdir_x(point_distance(x,y,room_width/2,room_height/2)+4,_dir)
 	y	= CENTER_Y+lengthdir_y(point_distance(x,y,room_width/2,room_height/2)+4,_dir)
-	spd[vv]*=-1
-	spd[hh]	= random_range(spd[hh]-1,spd[hh]+1)
+	spd[vv]	= -spd[vv]*random_range(abs(2/spd[vv]),abs(5/spd[vv]))
+	spd[hh]	= clamp(random_range(spd[hh]-1,spd[hh]+1),-3,3)
 }
 
-if DIS_R_CENTER >= limit_inf[0] {
+if DIS_R_CENTER >= max_radio[0] {
 	var _dir	= point_direction(x,y,room_width/2,room_height/2)-180
 	x	= CENTER_X+lengthdir_x(point_distance(x,y,room_width/2,room_height/2)-4,_dir)
 	y	= CENTER_Y+lengthdir_y(point_distance(x,y,room_width/2,room_height/2)-4,_dir)
-	spd[vv]*=-1
-	spd[hh]	= random_range(spd[hh]-1,spd[hh]+1)
+	spd[vv]	= -spd[vv]*random_range(2/spd[vv],5/spd[vv])
+	spd[hh]	= clamp(random_range(spd[hh]-1,spd[hh]+1),-3,3)
 }
 
 if place_meeting(x,y,o_atk_00) spd[vv]*=-1

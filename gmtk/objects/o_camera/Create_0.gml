@@ -1,7 +1,7 @@
 globalvar cam_angle,cam_angle_z,angle_z, shake;
 cam_angle	= 0
 
-angle_z		= 15
+angle_z		= 25
 cam_angle_z	= 1/dsin(angle_z)
 
 angle_xr	= 0

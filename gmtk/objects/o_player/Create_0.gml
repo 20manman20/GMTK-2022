@@ -1,4 +1,4 @@
-globalvar cam_angle, limit_inf, limit_sup;
+globalvar cam_angle, max_radio, min_radio;
 
 spd				= [0,0]
 vec_spd			= [0,0]
@@ -9,10 +9,11 @@ spd_max		= 2
 
 invincible	= false
 
-
+bol_dash	= false
 
 spd			= [0,0]
 spd_push	= [0,0]
+spd_push_acc	= .1
 spd_final	= [0,0]
 
 spr_walk[0]	= s_p_right
@@ -43,5 +44,5 @@ instance_create_depth(x,y,depth-10,o_fx, {
 	image_yscale : .5
 })
 
-limit_inf	= [(756)/2,(756-90*2)/2]
-limit_sup	= [(756-90*5)/2,(756-90*3)/2]
+max_radio	= [(756)/2,(756-90*2)/2,(756)/2-24]
+min_radio	= [(756-90*5)/2,(756-90*3)/2,(756-90*5)/2+8]
