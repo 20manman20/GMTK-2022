@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "o_slope",
   "spriteId": null,
   "solid": false,
   "visible": true,
@@ -25,8 +28,4 @@
     "name": "Objetos",
     "path": "folders/Objetos.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "o_slope",
-  "tags": [],
-  "resourceType": "GMObject",
 }

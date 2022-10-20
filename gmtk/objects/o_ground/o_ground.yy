@@ -1,8 +1,8 @@
 {
-  "spriteId": {
-    "name": "s_ground44",
-    "path": "sprites/s_ground44/s_ground44.yy",
-  },
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "o_ground",
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,
@@ -21,20 +21,11 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-  ],
-  "properties": [
-    {"varType":0,"value":"0","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"z","tags":[],"resourceType":"GMObjectProperty",},
-    {"varType":0,"value":"irandom_range(0,8)*4","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"z_size","tags":[],"resourceType":"GMObjectProperty",},
-  ],
+  "eventList": [],
+  "properties": [],
   "overriddenProperties": [],
   "parent": {
     "name": "Objetos",
     "path": "folders/Objetos.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "o_ground",
-  "tags": [],
-  "resourceType": "GMObject",
 }

@@ -9,6 +9,7 @@ spd_max		= 2
 
 invincible	= false
 
+key_dash	= false
 bol_dash	= false
 
 spd			= [0,0]

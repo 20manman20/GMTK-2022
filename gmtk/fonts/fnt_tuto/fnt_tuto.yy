@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMFont",
+  "resourceVersion": "1.0",
+  "name": "fnt_tuto",
   "hinting": 0,
   "glyphOperations": 0,
   "interpreter": 0,
@@ -132,8 +135,4 @@
     "name": "Fuentes",
     "path": "folders/Fuentes.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "fnt_tuto",
-  "tags": [],
-  "resourceType": "GMFont",
 }
